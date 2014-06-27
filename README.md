@@ -1,5 +1,62 @@
-php-barcode
-===========
+<h2>php-barcode</h2>
+
+This library has been heavily modified from its originl version which was written by David Tufts. The original of PHP Barcode by David Tufts is available at: https://github.com/davidscotttufts/php-barcode/
+
+This branch of PHP Barcode is specifically geard toward an object oriented approach, and for serving more useful and insighrful examples.
+
+<h3>Examples</h3>
+<pre>
+/**
+ * Render a barcode and save it to the file system:
+ */
+require 'phpbarcode.php';
+$barcode = new Barcode();
+$barcode->renderToFile('my first barcode', 'my-first-barcode.png');
+</pre>
+
+<pre>
+/**
+ * Render a barcode and return the image as a binary string:
+ */
+require 'phpbarcode.php';
+$barcode = new Barcode();
+$barcode->renderToReturn('my first barcode', 'my-first-barcode.png');
+</pre>
+
+<pre>
+/**
+ * Render a barcode and output it directly to the web browser:
+ */
+require 'phpbarcode.php';
+$barcode = new Barcode();
+$barcode->renderToOutput('my first barcode', 'my-first-barcode.png');
+</pre>
+
+<pre>
+/**
+ * Set the orientation of the barcode:
+ * 
+ * Valid Arguments:
+ *   Barcode::$ORIENTATION['HORIZONTA'] (default): The barcode will be rendered horizontlly on the screen.
+ *   Barcode::$ORIENTATION['VERTICAL']: The barcode will be rendered vertically on the screen.
+ */
+$barcode->setOrientation(Barcode::$ORIENTATION['HORIZONTAL']);
+</pre>
+
+<pre>
+/**
+ * Set the format in which the barcode will be rendered:
+ * 
+ * Valid Arguments:
+ *   Barcode::$FORMAT['CODE128'] (default): Code 128
+ *   Barcode::$FORMAT['CODE39']: Code 39
+ *   Barcode::$FORMAT['CODE25']: Code 2of5
+ *   Barcode::$FORMAT['CODABAR']: Codabar
+ */
+$barcode->setFormat(Barcode::$FORMAT['CODABAR']);
+</pre>
+
+<h3>ORIGINAL README</h3>
 
 Source code for the article "How To Create Barcodes in PHP" found at: 
 http://davidscotttufts.com/2009/03/31/how-to-create-barcodes-in-php/
